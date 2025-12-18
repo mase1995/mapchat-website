@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <circle cx="300" cy="315" r="250" fill="url(#paint0_radial)" opacity="0.3"/>
+  <circle cx="900" cy="315" r="250" fill="url(#paint1_radial)" opacity="0.3"/>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="url(#paint2_linear)">MapChat</text>
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="36" text-anchor="middle" fill="#9CA3AF">Connect Anywhere, Anytime</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 315) rotate(90) scale(250)">
+      <stop stop-color="#00F5D4"/>
+      <stop offset="1" stop-color="#00F5D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 315) rotate(90) scale(250)">
+      <stop stop-color="#FF2E63"/>
+      <stop offset="1" stop-color="#FF2E63" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint2_linear" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="50%" stop-color="#04D9FF"/>
+      <stop offset="100%" stop-color="#FF2E63"/>
+    </linearGradient>
+  </defs>
+</svg>

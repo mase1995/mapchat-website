@@ -1,0 +1,342 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { 
+  MapPin, 
+  MessageCircle, 
+  Users, 
+  Shield, 
+  Zap, 
+  Globe,
+  Star,
+  Smartphone,
+  ArrowRight,
+  Check,
+  Play
+} from 'lucide-react'
+import PhoneMockup from '@/components/PhoneMockup'
+import WaitlistForm from '@/components/WaitlistForm'
+
+export default function Home() {
+  const features = [
+    {
+      icon: MapPin,
+      title: 'Location-Based Rooms',
+      description: 'Join chat rooms at landmarks and locations worldwide. Connect with people at your favorite places.'
+    },
+    {
+      icon: MessageCircle,
+      title: 'Real-Time Messaging',
+      description: 'Experience lightning-fast messaging with real-time updates and rich media support.'
+    },
+    {
+      icon: Users,
+      title: 'Community Driven',
+      description: 'Build communities around locations you love. Create rooms, invite friends, and grow your network.'
+    },
+    {
+      icon: Shield,
+      title: 'Privacy First',
+      description: 'End-to-end encryption for DMs, robust moderation tools, and granular privacy controls.'
+    },
+    {
+      icon: Zap,
+      title: 'Level Up System',
+      description: 'Earn XP, unlock achievements, and level up as you engage with the community.'
+    },
+    {
+      icon: Globe,
+      title: 'Discover Landmarks',
+      description: 'Explore thousands of landmarks from stadiums to national parks, each with its own chat room.'
+    }
+  ]
+
+  const stats = [
+    { value: '10K+', label: 'Active Users' },
+    { value: '50K+', label: 'Chat Rooms' },
+    { value: '1M+', label: 'Messages Sent' },
+    { value: '100+', label: 'Countries' }
+  ]
+
+  const plans = [
+    {
+      name: 'Free',
+      price: '$0',
+      features: [
+        'Join unlimited rooms',
+        'Send text messages',
+        'Basic profile customization',
+        'Access to landmarks',
+        'Community features'
+      ]
+    },
+    {
+      name: 'Premium',
+      price: '$4.99',
+      period: '/month',
+      popular: true,
+      features: [
+        'Everything in Free',
+        'Send photos & videos',
+        'Custom username colors',
+        'Profile themes',
+        'No ads',
+        'Priority support',
+        'Advanced moderation tools'
+      ]
+    }
+  ]
+
+  return (
+    <main className="min-h-screen bg-black">
+      {/* Navigation */}
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center gap-3">
+              <Image src="/logo.png" alt="MapChat" width={40} height={40} className="rounded-lg" />
+              <span className="text-xl font-bold text-gradient">MapChat</span>
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#features" className="text-gray-300 hover:text-white transition">Features</a>
+              <a href="#pricing" className="text-gray-300 hover:text-white transition">Pricing</a>
+              <a href="#about" className="text-gray-300 hover:text-white transition">About</a>
+              <Link href="/login" className="text-gray-300 hover:text-white transition">Login</Link>
+              <Link href="/signup" className="bg-gradient-primary text-black px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition">
+                Sign Up
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,245,212,0.15),transparent_50%)]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <div className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <span className="text-primary text-sm font-semibold">🚀 Launching Soon - Join the Waitlist!</span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Connect <span className="text-gradient">Anywhere</span>, Anytime
+              </h1>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                Join location-based chat rooms at landmarks around the world. 
+                From the Eiffel Tower to your local coffee shop, MapChat brings people together.
+              </p>
+              <div className="max-w-lg">
+                <WaitlistForm variant="hero" />
+              </div>
+              <p className="text-gray-500 text-sm mt-4">
+                Be the first to know when we launch. No spam, ever.
+              </p>tton>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            <div className="relative flex items-center justify-center">
+              <PhoneMockup />
+            </div>
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20"
+          >
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Everything You Need to <span className="text-gradient">Connect</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Powerful features designed to bring people together through location-based communities
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-dark-light border border-gray-800 rounded-2xl p-8 hover:border-primary/50 transition group"
+              >
+                <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-primary/50 transition">
+                  <feature.icon className="w-7 h-7 text-black" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Simple, <span className="text-gradient">Transparent</span> Pricing
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Start for free, upgrade when you're ready for more features
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`relative bg-dark-light border rounded-2xl p-8 ${
+                  plan.popular 
+                    ? 'border-primary shadow-xl shadow-primary/20' 
+                    : 'border-gray-800'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-primary text-black px-6 py-1 rounded-full text-sm font-bold">
+                    Most Popular
+                  </div>
+                )}
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-5xl font-bold text-gradient">{plan.price}</span>
+                    {plan.period && <span className="text-gray-400">{plan.period}</span>}
+                  </div>
+                </div>
+                <ul className="space-y-4 mb-8">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className={`w-full py-4 rounded-full font-bold text-lg transition ${
+                  plan.popular
+                    ? 'bg-gradient-primary text-black hover:shadow-lg hover:shadow-primary/50'
+                    : 'bg-dark border border-gray-700 text-white hover:border-primary'
+                }`}>
+                  {plan.price === '$0' ? 'Get Started' : 'Upgrade Now'}
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.15),transparent_70%)]" />
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Ready to <span className="text-gradient">Connect</span>?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join thousands of users already connecting through MapChat
+            </p>
+            <button className="bg-gradient-primary text-black px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-primary/50 transition inline-flex items-center gap-3">
+              Download MapChat
+              <ArrowRight className="w-6 h-6" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="about" className="border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Ready to <span className="text-gradient">Connect</span>?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join the waitlist and be among the first to experience MapChat
+            </p>
+            <div className="max-w-md mx-auto">
+              <WaitlistForm variant="hero" />
+            </div>
+          </motion.div>href="#features" className="hover:text-primary transition">Features</a></li>
+                <li><a href="#pricing" className="hover:text-primary transition">Pricing</a></li>
+                <li><a href="/download" className="hover:text-primary transition">Download</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="/about" className="hover:text-primary transition">About</a></li>
+                <li><a href="/blog" className="hover:text-primary transition">Blog</a></li>
+                <li><a href="/careers" className="hover:text-primary transition">Careers</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="/privacy" className="hover:text-primary transition">Privacy</a></li>
+                <li><a href="/terms" className="hover:text-primary transition">Terms</a></li>
+                <li><a href="/support" className="hover:text-primary transition">Support</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 MapChat. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
