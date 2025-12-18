@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://mapchat.studio',
     siteName: 'MapChat',
     images: [{
-      url: '/og-image.png',
+      url: '/api/og',
       width: 1200,
       height: 630,
       alt: 'MapChat - Connect Anywhere, Anytime',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MapChat - Connect Anywhere, Anytime',
     description: 'Join location-based chat rooms and connect with people around the world',
-    images: ['/og-image.png'],
+    images: ['/api/og'],
   },
 }
 
